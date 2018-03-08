@@ -1,12 +1,34 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet} from 'react-native';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import CardList from "./components/CardList";
+import CardShowcase from "./components/CardNative";
 
-export default class App extends React.Component {
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Anote Development starts today!</Text>
-      </View>
+        <Container>
+          <Header>
+            <Left>
+              <Button transparent>
+                <Icon name='menu' />
+              </Button>
+            </Left>
+            <Body>
+              <Title>Anote</Title>
+            </Body>
+            <Right />
+          </Header>
+          <Content>
+            <CardList />
+            <CardShowcase />
+          </Content>
+        </Container>
     );
   }
 }
